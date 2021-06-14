@@ -24,7 +24,7 @@ public class Client {
 
             et.begin();
             Student student = (Student) em.getReference(Student.class,21l);
-            // How to get around the foreign key constraint issue. Set the foreign key value to null prior to deleting the record.
+            //How to get around the foreign key constraint issue. Set the foreign key value to null prior to deleting the record.
             student.setGuide(null);
             em.remove(student);
             et.commit();
