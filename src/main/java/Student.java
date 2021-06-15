@@ -2,6 +2,9 @@ import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 
+// Owner
+
+
 @Entity
 public class Student {
 
@@ -15,6 +18,8 @@ public class Student {
     private String name;
 
     // Cascade allows you to persist Guides and Students w/ one persist command
+    // Many side is almost always the owner of the relationship
+    //
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     @JoinColumn(name="guide_id")
     private Guide guide;

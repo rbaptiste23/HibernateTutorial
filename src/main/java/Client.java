@@ -12,22 +12,21 @@ public class Client {
         EntityTransaction et = em.getTransaction();
 
         try {
-//            Guide guide = new Guide("staff5555","Debra Marlow", 1048);
-//            Student student1 = new Student("en777","Tommy John", guide);
-//            Student student2 = new Student("en888","Rasheda Jenkins", guide);
+            Guide guide1 = new Guide("2000MO10789","Mike Lawson", 1000);
+            Guide guide2 = new Guide("2000M10901","Ian Lamb", 2000);
 
-//            et.begin();
-//            //em.persist(guide);
-//            em.persist(student1);
-//            em.persist(student2);
-//            et.commit();
+
+            Student student1 = new Student("2014JT50123","John Smith", guide1);
+            Student student2 = new Student("2014AL50456","Amy Gill", guide1);
 
             et.begin();
-            Student student = (Student) em.getReference(Student.class,21l);
-            //How to get around the foreign key constraint issue. Set the foreign key value to null prior to deleting the record.
-            student.setGuide(null);
-            em.remove(student);
+            guide1.getStudents().add(student1);
+            guide1.getStudents().add(student2);
+
+            em.persist(guide1);
+            em.persist(guide2);
             et.commit();
+
 
         } catch (Exception e) {
             et.rollback();
