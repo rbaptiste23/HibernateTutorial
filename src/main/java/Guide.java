@@ -23,7 +23,7 @@ public class Guide {
     // the owner of the relationship.
     // guide represents the guide field in the Student class (private Guide guide)..
     // That guide field is mapped to the foreign key field in Student.
-    @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST})
+    @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST}, orphanRemoval = true)
     private Set<Student> students =new HashSet<>();
 
 
