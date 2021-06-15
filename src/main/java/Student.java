@@ -3,6 +3,8 @@ import org.hibernate.annotations.Cascade;
 import javax.persistence.*;
 
 // Owner
+// Owner cares about the relationship.
+// The owner is the entity that contains the foreign key column...
 
 
 @Entity

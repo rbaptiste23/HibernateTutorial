@@ -6,6 +6,7 @@ import java.util.Set;
 
 
 // Inverse End
+// Inverse End does not care about the relationship...
 
 @Entity
 public class Guide {
@@ -67,5 +68,11 @@ public class Guide {
 
     public void setSalary(Integer salary) {
         this.salary = salary;
+    }
+
+    // When we add a new student the Guide will be associated w/ the Student.
+    public void addStudent(Student student) {
+        students.add(student);
+        student.setGuide(this);
     }
 }
