@@ -2,6 +2,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class Client {
 
@@ -27,8 +28,13 @@ public class Client {
 //            em.persist(guide2);
 
             Guide guide = (Guide)em.getReference(Guide.class,25l);
-            Student student = (Student) em.getReference(Student.class,24l);
-            guide.addStudent(student);
+//            Student student = (Student) em.getReference(Student.class,24l);
+//            guide.addStudent(student);
+
+            List<Student> students = em.createQuery("select s from Student s where s.guide.id = :guideId")
+                    .setParameter("guideId", guide.getId())
+                    .getResultList();
+
 
             et.commit();
 

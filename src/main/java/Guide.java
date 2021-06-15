@@ -21,6 +21,8 @@ public class Guide {
 
     // if a Guide is updated the Student will not be updated because Guide is not
     // the owner of the relationship.
+    // guide represents the guide field in the Student class (private Guide guide)..
+    // That guide field is mapped to the foreign key field in Student.
     @OneToMany(mappedBy = "guide", cascade = {CascadeType.PERSIST})
     private Set<Student> students =new HashSet<>();
 
