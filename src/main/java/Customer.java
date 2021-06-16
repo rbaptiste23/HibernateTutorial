@@ -1,12 +1,7 @@
-
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 
-// Inverse End
-// Inverse End does not care about the relationship...
+// Owner
 
 @Entity
 public class Customer {
@@ -14,12 +9,10 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-
-
-
     private String name;
 
     @OneToOne(cascade = {CascadeType.PERSIST})
+    // Unique = true (ensures the one-to-one relationship has unique values)
     @JoinColumn(name="passport_id", unique = true)
     Passport passport;
 
