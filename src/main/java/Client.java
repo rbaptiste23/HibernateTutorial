@@ -16,8 +16,6 @@ public class Client {
             et.begin();
 
 
-
-
             et.commit();
 
 
