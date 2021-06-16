@@ -14,7 +14,13 @@ public class Customer {
     @OneToOne(cascade = {CascadeType.PERSIST})
     // Unique = true (ensures the one-to-one relationship has unique values)
     @JoinColumn(name="passport_id", unique = true)
+    @MapsId
     Passport passport;
+
+    // This annotation allows you to use the id of the Passport class as
+    // the foreign key id of the Customer class.. We cannot use auto key generation for the
+    //  customer class
+
 
     public Customer() {}
 

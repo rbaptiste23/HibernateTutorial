@@ -12,14 +12,14 @@ public class Passport {
     private String passportNumber;
 
     // mappedBy makes this class the inverse side of a one-to-one relationship.
-    @OneToOne(mappedBy = "passport")
-    private Customer customer;
+//    @OneToOne(mappedBy = "passport")
+//    private Customer customer;
 
     public Passport(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
+//    public Customer getCustomer() {
+//        return customer;
+//    }
 }

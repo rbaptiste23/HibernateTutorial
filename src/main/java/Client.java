@@ -15,8 +15,8 @@ public class Client {
         try {
 
             et.begin();
-            Passport passport = new Passport("925076473");
-            Customer customer = new Customer("Nicole Scott", passport);
+            Passport passport = new Passport("9110024");
+            Customer customer = new Customer("John Scott", passport);
             em.persist(customer);
             et.commit();
 
